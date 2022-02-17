@@ -192,6 +192,7 @@ class ApiServerClient {
 
   getOSBResourceOperationStatus(opts) {
     logger.debug(`Waiting ${CONST.EVENTMESH_POLLER_DELAY} ms to get the operation state`);
+    logger.debug(`GBERCHE getOSBResourceOperationStatus`);
     let finalState;
     return Promise.delay(CONST.EVENTMESH_POLLER_DELAY)
       .then(() => this.getResource({
