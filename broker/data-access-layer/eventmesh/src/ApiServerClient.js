@@ -132,7 +132,7 @@ class ApiServerClient {
    * @param {object} opts.namespaceId - namespace Id of resource
    */
   getResourceOperationStatus(opts) {
-    logger.debug(`Waiting ${CONST.EVENTMESH_POLLER_DELAY} ms to get the operation state`);
+    logger.debug(`GBERCHE Waiting ${CONST.EVENTMESH_POLLER_DELAY} ms to get the operation state`);
     let finalState;
     return Promise.delay(CONST.EVENTMESH_POLLER_DELAY)
       .then(() => this.getResource({
