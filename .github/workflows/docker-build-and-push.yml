@@ -2,8 +2,8 @@ name: Build docker image tarball
 
 on: 
   push:
-    branches:    
-      - debugtraces
+#    branches:    
+#      - debugtraces
 
 env:
   REGISTRY: ghcr.io
@@ -40,5 +40,5 @@ jobs:
         with:
           context: .
           file: broker/Dockerfile-gbepatch
-          push: true
+          push: false
           tags: ${{ steps.meta.outputs.tags }}
