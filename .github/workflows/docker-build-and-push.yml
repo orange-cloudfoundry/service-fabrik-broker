@@ -39,6 +39,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: broker/Dockerfile
-          push: false
+          # This builds from sources
+          #file: broker/Dockerfile
+          # This just patches a single file from a published image. Faster
+          file: broker/Dockerfile-patch-from-image
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
