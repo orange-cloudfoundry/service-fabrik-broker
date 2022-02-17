@@ -39,6 +39,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: broker/Dockerfile-gbepatch
+          file: broker/Dockerfile
           push: false
           tags: ${{ steps.meta.outputs.tags }}
