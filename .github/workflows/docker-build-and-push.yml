@@ -1,6 +1,9 @@
 name: Build docker image tarball
 
-on: [push]
+on: 
+  push:
+    branches:    
+      - debugtraces
 
 env:
   REGISTRY: ghcr.io
