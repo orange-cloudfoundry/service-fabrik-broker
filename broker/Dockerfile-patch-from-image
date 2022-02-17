@@ -1,5 +1,5 @@
 # Build the manager binary
 FROM servicefabrikjenkins/service-fabrik-broker:0.22.0
 
-WORKDIR .
-COPY data-access-layer/eventmesh/src/ApiServerClient.js /opt/service-fabrik-broker/broker/data-access-layer/eventmesh/src/ApiServerClient.js
+WORKDIR /opt/service-fabrik-broker/broker
+COPY broker/data-access-layer/eventmesh/src/ApiServerClient.js data-access-layer/eventmesh/src/ApiServerClient.js
