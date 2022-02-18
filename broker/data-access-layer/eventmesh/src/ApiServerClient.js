@@ -132,7 +132,7 @@ class ApiServerClient {
    * @param {object} opts.namespaceId - namespace Id of resource
    */
   getResourceOperationStatus(opts) {
-    logger.debug(`GBERCHE2 Waiting ${CONST.EVENTMESH_POLLER_DELAY} ms to get the operation state`);
+    logger.debug(`GBERCHE3 Waiting ${CONST.EVENTMESH_POLLER_DELAY} ms to get the operation state`);
     let finalState;
     return Promise.delay(CONST.EVENTMESH_POLLER_DELAY)
       .then(() => this.getResource({
@@ -349,6 +349,7 @@ class ApiServerClient {
     const crdEncodedTemplate = _.get(config, `apiserver.crds['${resourceGroup}_${CONST.APISERVER.API_VERSION}_${resourceType}.yaml']`);
     if (crdEncodedTemplate) {
       logger.debug(`Getting crd json for: ${resourceGroup}_${CONST.APISERVER.API_VERSION}_${resourceType}.yaml`);
+      logger.debug(`GBERCHE: Buffer.from(crdEncodedTemplate, 'base64'): ${Buffer.from(crdEncodedTemplate, 'base64')}`);
       return yaml.safeLoad(Buffer.from(crdEncodedTemplate, 'base64'));
     }
   }
